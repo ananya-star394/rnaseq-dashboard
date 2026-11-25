@@ -10,7 +10,7 @@ def load(path):
 
 up = st.sidebar.file_uploader("Upload DESeq2 results CSV (optional)", type="csv")
 try:
-    res = pd.read_csv(up, index_col=0) if up else load("results/deseq2_results.csv")
+    res = pd.read_csv(up, index_col=0) if up else load("deseq2_results.csv")
 except FileNotFoundError:
     st.error("Run `python rnaseq_pipeline.py` first, or upload a results CSV."); st.stop()
 
